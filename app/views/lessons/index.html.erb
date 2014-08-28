@@ -10,7 +10,7 @@
           </div>
           <div class="panel-body">
               <% @lessons.each do |lesson| %>
-              <a href="/lessons/<%= lesson.id %>"><%= lesson.name%></a>  <span class="badge"><%= lesson.number%></span>
+              <a href="/lessons/<%= lesson.id %>"><%= lesson.name%></a>     <span class="badge"><%= lesson.number%></span>
             </br>
               <% end %>
           </div>

@@ -1,17 +1,30 @@
-<div class="jumbotron">
-<h1>Lesson <small><%= @lesson.name %></small></h1>
-</div>
-  <body>
-    <div class = "col-md-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title"><%= @lesson.name %> Info</h3>
+<nav class="navbar navbar-inverse" role="navigation">
+  <p class="navbar-text navbar-left"><a href="/lessons/<%= @lesson.next.id %>/">Previous Lesson</a></p>
+  <p class="navbar-text navbar-right"><a href="/lessons/<%= @lesson.previous.id %>/" class="navbar-link">Next Lesson</a></p>
+  <div class="container">
+  </div>
+</nav>
+  <div class="jumbotron">
+  <h1>Lesson <small><%= @lesson.name %></small></h1>
+  </div>
+    <body>
+      <div class = "col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= @lesson.name %> Info</h3>
+          </div>
+          <div class="panel-body">
+            Lesson Number: <%= @lesson.number %>
+          </div>
         </div>
-        <div class="panel-body">
-          Lesson Number: <%= @lesson.number %>
-        </div>
+        <a class="btn btn-warning" href="/lessons">Main</a>
+
+        <a class="btn btn-success" href="/lessons/<%= @lesson.id %>/edit">Edit</a>
+
+          <a class="btn btn-danger" href="/lessons/<%= @lesson.id %>"
+           data-confirm="Danger! Entry will be removed."
+           data-method="delete"
+           rel="nofollow">Delete</a>
       </div>
-      <button type="button" class="btn btn-warning"><a href="/lessons">Main</a></button>
-    </div>
-  </body>
+    </body>
 

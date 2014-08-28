@@ -33,4 +33,13 @@ class LessonsController < ApplicationController
       render('lessons/edit.html.erb')
     end
   end
+
+  def destroy
+    @lessons = Lesson.all
+    @lesson = Lesson.find(params[:id])
+    @lesson.destroy
+    @lesson = Lesson.new
+    render('lessons/index.html.erb')
+  end
+
 end
